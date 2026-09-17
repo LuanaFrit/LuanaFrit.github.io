@@ -5,17 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VJ Festival Zürich – Die Stadt wird zur Leinwand</title>
   
-  <!-- ==========================================================
-       SCHRIFTEN AUSTAUSCHEN:
-       Aktuell wird die System-Schrift "Arial" genutzt (siehe style.css,
-       ganz oben bei :root --font-main). Wenn du z.B. eine Google Font
-       nutzen willst, füge hier einen Link-Tag ein, z.B.:
-
-       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-
-       und ändere dann in style.css nur die Variable --font-main.
-       Mehr dazu in der Erklärung am Ende meiner Antwort.
-  =========================================================== -->
 
   <link rel="stylesheet" href="style/style.css">
 </head>
@@ -25,13 +14,13 @@
   <header class="navbar">
     <div class="navbar-inner">
 
-      <!-- LOGO: hier dein PNG-Logo einfügen -->
+      <!-- LOGO -->
       <a href="#top" class="logo">
-        <!-- Platzhalter-Text, durch <img src="images/logo.png" alt="VJ Festival Logo"> ersetzen -->
-        <img src="images/logo.png" alt="VJ Festival Zürich Logo" class="logo-img">
+
+        <img src="images/logo_weiss.png" alt="VJ Festival Zürich Logo" class="logo-img">
       </a>
 
-      <!-- Burger-Icon nur auf Mobile sichtbar -->
+     
       <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false">
         <span></span>
         <span></span>
@@ -49,12 +38,11 @@
     </div>
   </header>
 
-  <!-- ============ HERO / STARTBEREICH ============ -->
+ 
   <section class="hero" id="top">
     <div class="hero-inner">
 
-      <!-- VIDEO-PLATZHALTER
-           Anleitung zum Video einfügen findest du am Ende meiner Antwort. -->
+      <!-- VIDEO -->
       <div class="video-placeholder hero-video">
         <video class="hero-video-el" autoplay muted loop playsinline poster="images/hero-poster.jpg">
           <source src="videos/hero-video.mp4" type="video/mp4">
@@ -135,7 +123,7 @@
 
       <div class="gelaende-grid">
 
-        <!-- Maps-Platzhalter: hier später z.B. einen Google-Maps-iframe einfügen -->
+        <!-- Maps -->
         <div class="image-placeholder maps-placeholder">
           <span>Maps</span>
         </div>
@@ -175,7 +163,7 @@
     </div>
   </section>
 
-  <!-- ============ FOOTER / PARTNER ============ -->
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
       <h2 class="section-title">Unsere Partner</h2>
@@ -193,7 +181,7 @@
     </div>
   </footer>
 
-  <!-- ============ JAVASCRIPT: nur fürs Burgermenu ============ -->
+ 
   <script>
     const burgerBtn = document.getElementById('burgerBtn');
     const navLinks = document.getElementById('navLinks');
@@ -204,7 +192,7 @@
       burgerBtn.setAttribute('aria-expanded', isOpen);
     });
 
-    // Menu automatisch schliessen, wenn ein Link angeklickt wird (mobile)
+
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
