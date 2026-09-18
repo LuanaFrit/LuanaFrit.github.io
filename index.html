@@ -16,7 +16,7 @@
        und ändere dann in style.css nur die Variable --font-main.
   =========================================================== -->
 
-  
+
   <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
@@ -128,4 +128,90 @@
         <li><strong>Ort:</strong> Sihlcity Zürich</li>
         <li><strong>Festival:</strong> Musik · Visuals · Kunst · Community</li>
         <li><strong>Was dich erwartet:</strong> VJ-Shows, Projektionen, Musik, Animationen und kreative Visuals verwandeln Sihlcity in eine visuelle Erlebniswelt.</li>
-        <li><strong>Für wen:</strong> Das Festival richtet sich
+        <li><strong>Für wen:</strong> Das Festival richtet sich an alle, die Musik, digitale Kunst und visuelle Erlebnisse mögen, für junge Erwachsene genauso wie für Familien.</li>
+        <li><strong>Eintritt:</strong> GRATIS</li>
+      </ul>
+
+      <h3 class="gelaende-title">Gelände</h3>
+
+      <!-- 5 Bild-Platzhalter total: 1 grosses Hauptbild links + 4 kleinere Bilder rechts -->
+      <div class="gelaende-grid">
+
+        <div class="image-placeholder gelaende-hauptbild">
+          <img src="images/gelaende-hauptbild.jpg" alt="Gelände Übersicht">
+        </div>
+
+        <div class="bilder-grid">
+          <div class="image-placeholder"><img src="images/gelaende-1.jpg" alt="Gelände Bild 1"></div>
+          <div class="image-placeholder"><img src="images/gelaende-2.jpg" alt="Gelände Bild 2"></div>
+          <div class="image-placeholder"><img src="images/gelaende-3.jpg" alt="Gelände Bild 3"></div>
+          <div class="image-placeholder"><img src="images/gelaende-4.jpg" alt="Gelände Bild 4"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRAILER ============ -->
+  <section class="trailer" id="trailer">
+    <div class="container">
+      <h2 class="section-title">Trailer</h2>
+      <div class="video-placeholder trailer-video">
+        <video class="trailer-video-el" controls poster="images/trailer-poster.jpg">
+          <source src="videos/trailer.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLAKAT ============ -->
+  <section class="plakat" id="plakat">
+    <div class="container">
+      <h2 class="section-title">Plakat</h2>
+      <div class="image-placeholder plakat-placeholder">
+        <img src="images/plakat.jpg" alt="Festival Plakat">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER / PARTNER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <h2 class="section-title">Unsere Partner</h2>
+      <div class="sponsors">
+        <div class="sponsor">
+          <img src="images/sponsor-1.png" alt="Sponsor 1">
+        </div>
+        <div class="sponsor">
+          <img src="images/sponsor-2.png" alt="Sponsor 2">
+        </div>
+        <div class="sponsor">
+          <img src="images/sponsor-3.png" alt="Sponsor 3">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ JAVASCRIPT: nur fürs Burgermenu ============ -->
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    burgerBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      burgerBtn.classList.toggle('open');
+      burgerBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Menu automatisch schliessen, wenn ein Link angeklickt wird (mobile)
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        burgerBtn.classList.remove('open');
+        burgerBtn.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+
+</body>
+</html>
