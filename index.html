@@ -16,19 +16,19 @@
   <header class="navbar">
     <div class="navbar-inner">
 
-      <!-- LOGO: hier dein PNG-Logo einfügen -->
+      
       <a href="#top" class="logo">
-        <img src="images/logo_weiss.png" alt="VJ Festival Zürich Logo" class="logo-img">
+        <img src="images/logo.png" alt="VJ Festival Zürich Logo" class="logo-img">
       </a>
 
-      <!-- Burger-Icon nur auf Mobile sichtbar -->
+      
       <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <!-- Navigation Links -->
+      
       <nav class="nav-links" id="navLinks">
         <a href="#lineup" class="nav-link">Line-Up</a>
         <a href="#infos" class="nav-link">Infos</a>
@@ -39,10 +39,7 @@
     </div>
   </header>
 
-  <!-- ============ HERO / STARTBEREICH ============
-       Das Video liegt als Hintergrund über die GESAMTE Breite,
-       Text und Buttons liegen links ausgerichtet darüber.
-       Anleitung zum Video einfügen: siehe Erklärung am Ende meiner Antwort. -->
+  
   <section class="hero" id="top">
 
     <div class="hero-media">
@@ -53,10 +50,10 @@
     </div>
 
     <div class="hero-content">
-      <p class="eyebrow">Shilcity – Zürich</p>
+      <p class="eyebrow">Sihlcity – Zürich</p>
       <h1 class="hero-title">Die Stadt wird<br>zur <span class="highlight">Leinwand</span></h1> 
       <p class="hero-subtitle">Mehr als nur ein Festival</p>
-      <p class="hero-date">23.–25. November 2026</p>
+      <p class="hero-date">26.–28. November 2026</p>
 
       <div class="hero-buttons">
         <a href="#infos" class="btn btn-primary">Mehr Infos</a>
@@ -125,7 +122,7 @@
 
       <h3 class="gelaende-title">Gelände</h3>
 
-      <!-- 5 Bild-Platzhalter total: 1 grosses Hauptbild links + 4 kleinere Bilder rechts -->
+      
       <div class="gelaende-grid">
 
         <div class="image-placeholder gelaende-hauptbild">
@@ -184,7 +181,7 @@
     </div>
   </footer>
 
-  <!-- ============ JAVASCRIPT: nur fürs Burgermenu ============ -->
+  
   <script>
     const burgerBtn = document.getElementById('burgerBtn');
     const navLinks = document.getElementById('navLinks');
@@ -195,7 +192,7 @@
       burgerBtn.setAttribute('aria-expanded', isOpen);
     });
 
-    // Menu automatisch schliessen, wenn ein Link angeklickt wird (mobile)
+    
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
