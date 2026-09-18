@@ -1,9 +1,16 @@
+/* =========================================================
+   VARIABLEN
+   Hier kannst du zentral Farben & Schrift ändern.
+   Wenn du z.B. eine neue Schrift einbindest (siehe index.html <head>),
+   musst du NUR die Zeile --font-main unten anpassen — der Rest
+   des CSS greift überall auf diese Variable zu.
+========================================================= */
 :root {
   --gelb: #ECE000;
   --dunkellila: #1C132E;
   --helllila: #593588;
   --weiss: #ffffff;
-  --grau: #B7B7B7;      
+  --grau: #B7B7B7;      /* Farbe der Platzhalter-Boxen */
 
   --font-main: Arial, Helvetica, sans-serif; /* <-- Schrift hier austauschen */
 
@@ -11,6 +18,9 @@
   --radius: 8px;
 }
 
+/* =========================================================
+   RESET / GRUNDEINSTELLUNGEN
+========================================================= */
 * {
   margin: 0;
   padding: 0;
@@ -18,8 +28,8 @@
 }
 
 html {
-  scroll-behavior: smooth;   
-  scroll-padding-top: 80px;  
+  scroll-behavior: smooth;   /* sorgt für weiches Scrollen bei Anchor-Links */
+  scroll-padding-top: 80px;  /* damit Abschnitte nicht hinter der Navbar verschwinden */
 }
 
 body {
@@ -44,7 +54,9 @@ h1, h2, h3 {
   font-weight: 800;
 }
 
-
+/* =========================================================
+   PLATZHALTER (Bilder / Videos)
+========================================================= */
 .image-placeholder,
 .video-placeholder {
   background-color: var(--grau);
@@ -64,15 +76,17 @@ h1, h2, h3 {
   object-fit: cover;
 }
 
-
+/* =========================================================
+   NAVBAR
+========================================================= */
 .navbar {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--weiss);
+  background-color: var(--gelb);
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-inner {
@@ -104,7 +118,7 @@ h1, h2, h3 {
   color: var(--helllila);
 }
 
-
+/* Burger-Icon: standardmässig versteckt (nur Desktop) */
 .burger {
   display: none;
   flex-direction: column;
@@ -126,7 +140,6 @@ h1, h2, h3 {
   transition: all 0.3s ease;
 }
 
-
 .burger.open span:nth-child(1) {
   transform: translateY(8.5px) rotate(45deg);
 }
@@ -137,24 +150,52 @@ h1, h2, h3 {
   transform: translateY(-8.5px) rotate(-45deg);
 }
 
-
+/* =========================================================
+   HERO / STARTBEREICH
+   Video liegt als Vollbild-Hintergrund (0 Rand/Abstand),
+   Text + Buttons liegen links ausgerichtet darüber.
+========================================================= */
 .hero {
-  background-color: var(--dunkellila);
-  color: var(--weiss);
-  padding: 48px 0 72px;
-  text-align: center;
-}
-
-.hero-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.hero-video {
+  position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  margin-bottom: 32px;
+  min-height: 90vh;
+  overflow: hidden;
+  color: var(--weiss);
+  display: flex;
+  align-items: center; /* Text vertikal mittig über dem Video */
+}
+
+/* Video als Hintergrund, füllt den ganzen Hero-Bereich randlos aus */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-video-el {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dunkler Verlauf über dem Video, damit der Text immer lesbar bleibt */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(28, 19, 46, 0.85) 0%,
+    rgba(28, 19, 46, 0.55) 45%,
+    rgba(28, 19, 46, 0.15) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  padding: 48px 24px;
+  text-align: left; /* links ausgerichtet, wie im Mockup */
 }
 
 .eyebrow {
@@ -188,11 +229,11 @@ h1, h2, h3 {
 .hero-buttons {
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-start; /* links ausgerichtet, wie im Mockup */
   flex-wrap: wrap;
 }
 
-
+/* --- Buttons allgemein --- */
 .btn {
   display: inline-block;
   padding: 14px 32px;
@@ -213,7 +254,8 @@ h1, h2, h3 {
   transform: scale(1.08);
 }
 
-
+/* "Line-Up ansehen"-Button: transparent mit lila Rand + weisse Schrift,
+   beim Hover: wird grösser UND nimmt den Stil des anderen Buttons an */
 .btn-secondary {
   background-color: transparent;
   color: var(--weiss);
@@ -227,7 +269,9 @@ h1, h2, h3 {
   border-color: var(--gelb);
 }
 
-
+/* =========================================================
+   INTRO / "SEE THE CITY DIFFERENTLY"
+========================================================= */
 .intro {
   background-color: var(--gelb);
   padding: 56px 0;
@@ -242,13 +286,19 @@ h1, h2, h3 {
   max-width: 700px;
 }
 
-
+/* =========================================================
+   SECTION TITLES (wiederverwendet in mehreren Abschnitten)
+   -> zentriert, wie gewünscht
+========================================================= */
 .section-title {
   font-size: clamp(2rem, 5vw, 2.8rem);
   margin-bottom: 32px;
+  text-align: center;
 }
 
-
+/* =========================================================
+   VJ LINE-UP
+========================================================= */
 .lineup {
   background-color: var(--dunkellila);
   color: var(--weiss);
@@ -282,7 +332,9 @@ h1, h2, h3 {
   margin-bottom: 6px;
 }
 
-
+/* =========================================================
+   INFOS
+========================================================= */
 .infos {
   background-color: var(--gelb);
   padding: 64px 0;
@@ -301,15 +353,17 @@ h1, h2, h3 {
 .gelaende-title {
   font-size: 1.4rem;
   margin-bottom: 16px;
+  text-align: center;
 }
 
+/* Gelände: 1 grosses Hauptbild links + 4 kleinere Bilder rechts (2x2) */
 .gelaende-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
 
-.maps-placeholder {
+.gelaende-hauptbild {
   min-height: 220px;
 }
 
@@ -323,17 +377,19 @@ h1, h2, h3 {
   aspect-ratio: 1 / 1;
 }
 
-
+/* Ab Tablet-Grösse: Hauptbild links, 4 Bilder rechts nebeneinander */
 @media (min-width: 700px) {
   .gelaende-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .maps-placeholder {
+  .gelaende-hauptbild {
     min-height: 100%;
   }
 }
 
-
+/* =========================================================
+   TRAILER
+========================================================= */
 .trailer {
   background-color: var(--dunkellila);
   color: var(--weiss);
@@ -343,10 +399,12 @@ h1, h2, h3 {
 .trailer-video {
   aspect-ratio: 16 / 9;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto; /* zentriert */
 }
 
-
+/* =========================================================
+   PLAKAT
+========================================================= */
 .plakat {
   background-color: var(--dunkellila);
   color: var(--weiss);
@@ -356,10 +414,12 @@ h1, h2, h3 {
 .plakat-placeholder {
   aspect-ratio: 3 / 4;
   max-width: 420px;
-  margin: 0 auto;
+  margin: 0 auto; /* zentriert */
 }
 
-
+/* =========================================================
+   FOOTER / PARTNER
+========================================================= */
 .footer {
   background-color: var(--gelb);
   padding: 56px 0;
@@ -380,11 +440,13 @@ h1, h2, h3 {
   width: auto;
 }
 
-
+/* =========================================================
+   RESPONSIVE / MOBILE
+========================================================= */
 @media (max-width: 800px) {
 
   .burger {
-    display: flex; 
+    display: flex; /* Burger-Icon jetzt sichtbar */
   }
 
   .nav-links {
@@ -392,18 +454,18 @@ h1, h2, h3 {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--weiss);
+    background-color: var(--gelb);
     flex-direction: column;
     align-items: center;
     gap: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.open {
-    max-height: 300px; 
+    max-height: 300px; /* genug Platz für alle Links */
   }
 
   .nav-link {
@@ -412,9 +474,19 @@ h1, h2, h3 {
     text-align: center;
   }
 
+  .hero {
+    min-height: 70vh;
+    align-items: flex-end; /* auf Mobile Text eher unten im Video, besser lesbar */
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 32px 20px 40px;
+  }
+
   .hero-buttons {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 
   .btn {

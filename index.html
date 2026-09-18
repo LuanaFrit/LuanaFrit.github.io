@@ -4,9 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VJ Festival Zürich – Die Stadt wird zur Leinwand</title>
-  
 
-  <link rel="stylesheet" href="style/style.css">
+  <!-- ==========================================================
+       SCHRIFTEN AUSTAUSCHEN:
+       Aktuell wird die System-Schrift "Arial" genutzt (siehe style.css,
+       ganz oben bei :root --font-main). Wenn du z.B. eine Google Font
+       nutzen willst, füge hier einen Link-Tag ein, z.B.:
+
+       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+       und ändere dann in style.css nur die Variable --font-main.
+  =========================================================== -->
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,14 +24,12 @@
   <header class="navbar">
     <div class="navbar-inner">
 
-      <!-- LOGO -->
+      <!-- LOGO: hier dein PNG-Logo einfügen -->
       <a href="#top" class="logo">
-
-        <img src="images/logo_weiss.png" alt="VJ Festival Zürich Logo" class="logo-img">
+        <img src="images/logo.png" alt="VJ Festival Zürich Logo" class="logo-img">
       </a>
 
- <!-- LOGO -->
-     
+      <!-- Burger-Icon nur auf Mobile sichtbar -->
       <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false">
         <span></span>
         <span></span>
@@ -39,17 +47,20 @@
     </div>
   </header>
 
- 
+  <!-- ============ HERO / STARTBEREICH ============
+       Das Video liegt als Hintergrund über die GESAMTE Breite,
+       Text und Buttons liegen links ausgerichtet darüber.
+       Anleitung zum Video einfügen: siehe Erklärung am Ende meiner Antwort. -->
   <section class="hero" id="top">
-    <div class="hero-inner">
 
-      <!-- VIDEO -->
-      <div class="video-placeholder hero-video">
-        <video class="hero-video-el" autoplay muted loop playsinline poster="images/hero-poster.jpg">
-          <source src="videos/hero-video.mp4" type="video/mp4">
-        </video>
-      </div>
+    <div class="hero-media">
+      <video class="hero-video-el" autoplay muted loop playsinline poster="images/hero-poster.jpg">
+        <source src="videos/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
 
+    <div class="hero-content">
       <p class="eyebrow">Shilcity – Zürich</p>
       <h1 class="hero-title">Die Stadt wird zur <span class="highlight">Leinwand</span></h1>
       <p class="hero-subtitle">Mehr als nur ein Festival</p>
@@ -59,8 +70,8 @@
         <a href="#infos" class="btn btn-primary">Mehr Infos</a>
         <a href="#lineup" class="btn btn-secondary">Line-Up ansehen</a>
       </div>
-
     </div>
+
   </section>
 
   <!-- ============ SEE THE CITY DIFFERENTLY ============ -->
@@ -116,92 +127,4 @@
         <li><strong>Ort:</strong> Sihlcity Zürich</li>
         <li><strong>Festival:</strong> Musik · Visuals · Kunst · Community</li>
         <li><strong>Was dich erwartet:</strong> VJ-Shows, Projektionen, Musik, Animationen und kreative Visuals verwandeln Sihlcity in eine visuelle Erlebniswelt.</li>
-        <li><strong>Für wen:</strong> Das Festival richtet sich an alle, die Musik, digitale Kunst und visuelle Erlebnisse mögen, für junge Erwachsene genauso wie für Familien.</li>
-        <li><strong>Eintritt:</strong> GRATIS</li>
-      </ul>
-
-      <h3 class="gelaende-title">Gelände</h3>
-
-      <div class="gelaende-grid">
-
-        <!-- Maps -->
-        <div class="image-placeholder maps-placeholder">
-          <span>Maps</span>
-        </div>
-
-        <!-- 5 Bilder-Platzhalter -->
-        <div class="bilder-grid">
-          <div class="image-placeholder"><img src="images/gelaende-1.jpg" alt="Gelände Bild 1"></div>
-          <div class="image-placeholder"><img src="images/gelaende-2.jpg" alt="Gelände Bild 2"></div>
-          <div class="image-placeholder"><img src="images/gelaende-3.jpg" alt="Gelände Bild 3"></div>
-          <div class="image-placeholder"><img src="images/gelaende-4.jpg" alt="Gelände Bild 4"></div>
-          <div class="image-placeholder"><img src="images/gelaende-5.jpg" alt="Gelände Bild 5"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TRAILER ============ -->
-  <section class="trailer" id="trailer">
-    <div class="container">
-      <h2 class="section-title">Trailer</h2>
-      <div class="video-placeholder trailer-video">
-        <video class="trailer-video-el" controls poster="images/trailer-poster.jpg">
-          <source src="videos/trailer.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PLAKAT ============ -->
-  <section class="plakat" id="plakat">
-    <div class="container">
-      <h2 class="section-title">Plakat</h2>
-      <div class="image-placeholder plakat-placeholder">
-        <img src="images/plakat.jpg" alt="Festival Plakat">
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="container">
-      <h2 class="section-title">Unsere Partner</h2>
-      <div class="sponsors">
-        <div class="sponsor">
-          <img src="images/sponsor-1.png" alt="Sponsor 1">
-        </div>
-        <div class="sponsor">
-          <img src="images/sponsor-2.png" alt="Sponsor 2">
-        </div>
-        <div class="sponsor">
-          <img src="images/sponsor-3.png" alt="Sponsor 3">
-        </div>
-      </div>
-    </div>
-  </footer>
-
- 
-  <script>
-    const burgerBtn = document.getElementById('burgerBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    burgerBtn.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      burgerBtn.classList.toggle('open');
-      burgerBtn.setAttribute('aria-expanded', isOpen);
-    });
-
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        burgerBtn.classList.remove('open');
-        burgerBtn.setAttribute('aria-expanded', false);
-      });
-    });
-  </script>
-
-</body>
-</html>
+        <li><strong>Für wen:</strong> Das Festival richtet sich
