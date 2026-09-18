@@ -4,18 +4,16 @@
   --dunkellila: #1C132E;
   --helllila: #593588;
   --weiss: #ffffff;
-  --grau: #B7B7B7;      /* Farbe der Platzhalter-Boxen */
+  --grau: #B7B7B7;      
 
-  --font-main: Arial, Helvetica, sans-serif; /* <-- Schrift hier austauschen */
+  --font-main: Arial, Helvetica, sans-serif; 
   --font-heading: "piepie", Arial, Helvetica, sans-serif;
 
   --max-width: 1100px;
   --radius: 8px;
 }
 
-/* =========================================================
-   RESET / GRUNDEINSTELLUNGEN
-========================================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -23,8 +21,8 @@
 }
 
 html {
-  scroll-behavior: smooth;   /* sorgt für weiches Scrollen bei Anchor-Links */
-  scroll-padding-top: 80px;  /* damit Abschnitte nicht hinter der Navbar verschwinden */
+  scroll-behavior: smooth;   
+  scroll-padding-top: 80px;  
 }
 
 body {
@@ -51,9 +49,7 @@ h1, h2, h3 {
 }
 
 
-/* =========================================================
-   PLATZHALTER (Bilder / Videos)
-========================================================= */
+
 .image-placeholder,
 .video-placeholder {
   background-color: var(--grau);
@@ -73,9 +69,7 @@ h1, h2, h3 {
   object-fit: cover;
 }
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
@@ -115,7 +109,7 @@ h1, h2, h3 {
   color: var(--helllila);
 }
 
-/* Burger-Icon: standardmässig versteckt (nur Desktop) */
+
 .burger {
   display: none;
   flex-direction: column;
@@ -147,11 +141,7 @@ h1, h2, h3 {
   transform: translateY(-8.5px) rotate(-45deg);
 }
 
-/* =========================================================
-   HERO / STARTBEREICH
-   Video liegt als Vollbild-Hintergrund (0 Rand/Abstand),
-   Text + Buttons liegen links ausgerichtet darüber.
-========================================================= */
+
 .hero {
   position: relative;
   width: 100%;
@@ -159,10 +149,10 @@ h1, h2, h3 {
   overflow: hidden;
   color: var(--weiss);
   display: flex;
-  align-items: center; /* Text vertikal mittig über dem Video */
+  align-items: center; 
 }
 
-/* Video als Hintergrund, füllt den ganzen Hero-Bereich randlos aus */
+
 .hero-media {
   position: absolute;
   inset: 0;
@@ -175,7 +165,7 @@ h1, h2, h3 {
   object-fit: cover;
 }
 
-/* Dunkler Verlauf über dem Video, damit der Text immer lesbar bleibt */
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -203,7 +193,7 @@ h1, h2, h3 {
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem); /* etwas kleiner als vorher */
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem); 
   margin-bottom: 16px;
 }
 
@@ -226,11 +216,11 @@ h1, h2, h3 {
 .hero-buttons {
   display: flex;
   gap: 20px;
-  justify-content: flex-start; /* links ausgerichtet, wie im Mockup */
+  justify-content: flex-start; 
   flex-wrap: wrap;
 }
 
-/* --- Buttons allgemein --- */
+
 .btn {
   display: inline-block;
   padding: 14px 32px;
@@ -240,7 +230,7 @@ h1, h2, h3 {
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
-/* "Mehr Infos"-Button: bleibt farblich immer gleich, wird beim Hover nur grösser */
+
 .btn-primary {
   background-color: var(--gelb);
   color: var(--dunkellila);
@@ -251,8 +241,7 @@ h1, h2, h3 {
   transform: scale(1.08);
 }
 
-/* "Line-Up ansehen"-Button: transparent mit lila Rand + weisse Schrift,
-   beim Hover: wird grösser UND nimmt den Stil des anderen Buttons an */
+
 .btn-secondary {
   background-color: transparent;
   color: var(--weiss);
@@ -266,9 +255,7 @@ h1, h2, h3 {
   border-color: var(--gelb);
 }
 
-/* =========================================================
-   INTRO / "SEE THE CITY DIFFERENTLY"
-========================================================= */
+
 .intro {
   background-color: var(--gelb);
   padding: 56px 0;
@@ -283,19 +270,14 @@ h1, h2, h3 {
   max-width: 700px;
 }
 
-/* =========================================================
-   SECTION TITLES (wiederverwendet in mehreren Abschnitten)
-   -> zentriert, wie gewünscht
-========================================================= */
+
 .section-title {
   font-size: clamp(2rem, 5vw, 2.8rem);
   margin-bottom: 32px;
   text-align: center;
 }
 
-/* =========================================================
-   VJ LINE-UP
-========================================================= */
+
 .lineup {
   background-color: var(--dunkellila);
   color: var(--weiss);
@@ -329,9 +311,7 @@ h1, h2, h3 {
   margin-bottom: 6px;
 }
 
-/* =========================================================
-   INFOS
-========================================================= */
+/*INFOS*/
 .infos {
   background-color: var(--gelb);
   padding: 64px 0;
@@ -353,7 +333,7 @@ h1, h2, h3 {
   text-align: center;
 }
 
-/* Gelände: 1 grosses Hauptbild links + 4 kleinere Bilder rechts (2x2) */
+
 .gelaende-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -374,7 +354,7 @@ h1, h2, h3 {
   aspect-ratio: 1 / 1;
 }
 
-/* Ab Tablet-Grösse: Hauptbild links, 4 Bilder rechts nebeneinander */
+
 @media (min-width: 700px) {
   .gelaende-grid {
     grid-template-columns: 1fr 1fr;
@@ -384,9 +364,7 @@ h1, h2, h3 {
   }
 }
 
-/* =========================================================
-   TRAILER
-========================================================= */
+/* TRAILER */
 .trailer {
   background-color: var(--dunkellila);
   color: var(--weiss);
@@ -399,9 +377,7 @@ h1, h2, h3 {
   margin: 0 auto; /* zentriert */
 }
 
-/* =========================================================
-   PLAKAT
-========================================================= */
+/* PLAKAT */
 .plakat {
   background-color: var(--dunkellila);
   color: var(--weiss);
@@ -414,9 +390,7 @@ h1, h2, h3 {
   margin: 0 auto; /* zentriert */
 }
 
-/* =========================================================
-   FOOTER / PARTNER
-========================================================= */
+/* FOOTER */
 .footer {
   background-color: var(--gelb);
   padding: 56px 0;
@@ -437,9 +411,7 @@ h1, h2, h3 {
   width: auto;
 }
 
-/* =========================================================
-   RESPONSIVE / MOBILE
-========================================================= */
+
 @media (max-width: 800px) {
 
   .burger {
@@ -462,7 +434,7 @@ h1, h2, h3 {
   }
 
   .nav-links.open {
-    max-height: 300px; /* genug Platz für alle Links */
+    max-height: 300px; 
   }
 
   .nav-link {
@@ -473,7 +445,7 @@ h1, h2, h3 {
 
   .hero {
     min-height: 70vh;
-    align-items: flex-end; /* auf Mobile Text eher unten im Video, besser lesbar */
+    align-items: flex-end; 
   }
 
   .hero-content {
